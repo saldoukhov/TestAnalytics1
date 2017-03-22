@@ -1,4 +1,7 @@
 ﻿using Foundation;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 using UIKit;
 
 namespace TestAnalytics1
@@ -10,6 +13,10 @@ namespace TestAnalytics1
 	{
 		// class-level declarations
 
+		static AppDelegate()
+		{
+		}
+
 		public override UIWindow Window
 		{
 			get;
@@ -20,7 +27,8 @@ namespace TestAnalytics1
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
-
+			MobileCenter.Start("ba4b2319-ede3-4115-9abb-8b425e63293b",
+	   			typeof(Analytics), typeof(Crashes));
 			return true;
 		}
 
